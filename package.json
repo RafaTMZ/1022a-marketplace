@@ -9,7 +9,7 @@
     "build": "npm install && tsc",
     "start": "node ./dist/main.js"
   },
-  "author": "rafaeltmz",
+  "author": "guilhermeterenciani",
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.17",
