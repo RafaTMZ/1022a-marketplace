@@ -12,7 +12,7 @@ app.get("/produtos", async (req, res) => {
     try {
         const banco = new BancoMysql()
         await banco.criarConexao()
-        const result = await banco.consultar("select * from produtos")
+        const result = await banco.listar()
         await banco.finalizarConexao()
         res.send(result)
     } catch (e) {
@@ -58,7 +58,7 @@ app.put("/produtos/:id",async(req,res)=>{
     await banco.criarConexao()
     const result = await banco.consultar(query,parametros)
     await banco.finalizarConexao()
-    res.send("Produto excluido com sucesso id: "+req.params.id)
+    res.send("Produto alterado com sucesso id: "+req.params.id)
 })
 
 app.listen(8000, () => {
